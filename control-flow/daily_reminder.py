@@ -5,22 +5,22 @@ task = input("Enter your task: ")
 priority = input("Priority (high/medium/low): ").lower()
 time_bound = input("Is it time-bound? (yes/no): ").lower()
 
-# Start processing using match case
+# Match case for priority message
 match priority:
     case "high":
-        reminder = f"'{task}' is a high priority task"
+        priority_msg = "a high priority task"
     case "medium":
-        reminder = f"'{task}' is a medium priority task"
+        priority_msg = "a medium priority task"
     case "low":
-        reminder = f"'{task}' is a low priority task"
+        priority_msg = "a low priority task"
     case _:
-        reminder = f"'{task}' has an unknown priority level"
+        priority_msg = "a task with unknown priority"
 
-# Modify message if time-bound
+# Time sensitivity message
 if time_bound == "yes":
-    reminder += " that requires immediate attention today!"
+    time_msg = "Immediate action is required today!"
 else:
-    reminder += ". Consider completing it when you have free time."
+    time_msg = "You can complete it when you have free time."
 
-# Print final reminder
-print(f"\nReminder: {reminder}")
+# Final reminder message (ALX friendly)
+print(f"Reminder: Your task '{task}' is {priority_msg}. {time_msg}")
