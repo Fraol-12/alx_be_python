@@ -1,2 +1,0 @@
-
-if weather == "sunny":
