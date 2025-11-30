@@ -1,11 +1,17 @@
+# robust_division_calculator.py
+
 def safe_divide(numerator, denominator):
     try:
+        # Convert to float
         num = float(numerator)
-        denom = float(denominator)
-    except ValueError:
-        return "Error: Please enter numeric values only."
+        den = float(denominator)
+        
+        # Perform division
+        result = num / den
+        return f"The result of the division is {result}"
     
-    if denom == 0:
+    except ZeroDivisionError:
         return "Error: Cannot divide by zero."
     
-    return str(num / denom)
+    except ValueError:
+        return "Error: Please enter numeric values only."
