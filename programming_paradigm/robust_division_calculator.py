@@ -4,10 +4,8 @@ def safe_divide(numerator, denominator):
         denom = float(denominator)
     except ValueError:
         return "Error: Please enter numeric values only."
-
-    try:
-        result = num / denom
-    except ZeroDivisionError:
+    
+    if denom == 0:
         return "Error: Cannot divide by zero."
-    return f"The result of the divison is {result}"
-
+    
+    return str(num / denom)
